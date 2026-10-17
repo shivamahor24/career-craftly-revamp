@@ -215,28 +215,37 @@
 }
 
 .page-in {
-  animation: page-in 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  animation: page-in 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 @keyframes page-in {
   from {
-    transform: translateY(12px);
+    opacity: 0;
+    transform: translateY(14px);
+    filter: blur(4px);
   }
   to {
+    opacity: 1;
     transform: none;
+    filter: blur(0px);
   }
 }
 
 .word-rise {
-  animation: word-rise 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: word-rise 0.85s cubic-bezier(0.22, 1, 0.36, 1) both;
+  transform-origin: bottom left;
 }
 
 @keyframes word-rise {
   from {
-    transform: translateY(0.45em);
+    opacity: 0;
+    transform: translateY(0.55em) rotateX(15deg);
+    filter: blur(6px);
   }
   to {
+    opacity: 1;
     transform: none;
+    filter: blur(0px);
   }
 }
 
@@ -294,8 +303,21 @@
   }
 }
 
+.marquee-mask {
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
 .marquee-track {
   animation: marquee 38s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.marquee-reverse {
+  animation-direction: reverse;
 }
 
 .marquee-slow {
@@ -368,6 +390,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .marquee-track,
+  .marquee-reverse,
   .marquee-slow,
   .hero-grid,
   .hero-glow,
@@ -377,6 +400,7 @@
   .carve {
     animation: none;
     transition: none;
+    filter: none;
   }
   .carve {
     clip-path: none;
