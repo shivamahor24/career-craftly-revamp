@@ -7,16 +7,17 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/80",
+        default:
+          "border border-[#a492ed]/35 bg-[#6d3fea] text-white shadow-[0_0_25px_rgba(109,63,234,0.45),inset_0_1px_0_rgba(164,146,237,0.45)] hover:border-[#a492ed]/55 hover:bg-[#7c4ff0] hover:shadow-[0_0_32px_rgba(109,63,234,0.6),inset_0_1px_0_rgba(164,146,237,0.6)]",
         outline:
-          "border-border bg-background hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:border-input dark:bg-input/30 dark:hover:bg-input/50",
+          "border-[#a492ed]/25 bg-[#a492ed]/12 text-[#d3d3d3] hover:border-[#a492ed]/50 hover:bg-[#a492ed]/20 hover:text-white aria-expanded:bg-muted aria-expanded:text-foreground",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklch,var(--secondary),var(--foreground)_5%)] aria-expanded:bg-secondary aria-expanded:text-secondary-foreground",
+          "border border-[#a492ed]/20 bg-secondary text-secondary-foreground hover:border-[#a492ed]/40 hover:bg-[#a492ed]/20 aria-expanded:bg-secondary aria-expanded:text-secondary-foreground",
         ghost:
-          "hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:hover:bg-muted/50",
+          "hover:bg-[#a492ed]/12 hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground",
         destructive:
-          "bg-destructive/10 text-destructive hover:bg-destructive/20 focus-visible:border-destructive/40 focus-visible:ring-destructive/20 dark:bg-destructive/20 dark:hover:bg-destructive/30 dark:focus-visible:ring-destructive/40",
-        link: "text-primary underline-offset-4 hover:underline",
+          "bg-destructive/15 text-destructive hover:bg-destructive/25 focus-visible:border-destructive/40 focus-visible:ring-destructive/20",
+        link: "text-[#a492ed] underline-offset-4 hover:text-white hover:underline",
       },
       size: {
         default:

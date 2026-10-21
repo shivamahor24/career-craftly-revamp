@@ -7,26 +7,28 @@ import { nav, offerings, site } from "@/lib/site"
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-white/10 bg-background">
+    <footer className="border-t border-white/10 bg-[#020010]">
       <div className="overflow-hidden border-b border-white/10 px-4 pt-16 pb-4 md:px-8 md:pt-24">
         <Reveal y={40} duration={0.9}>
-          <p className="wordmark text-foreground">
+          <p className="wordmark bg-gradient-to-b from-white via-[#d3d3d3] to-[#a492ed]/40 bg-clip-text text-transparent">
             Career
-            <span className="block italic text-white/75">Craftly</span>
+            <span className="block bg-gradient-to-r from-[#a492ed] via-[#6d3fea] to-[#a492ed]/40 bg-clip-text italic text-transparent">
+              Craftly
+            </span>
           </p>
         </Reveal>
       </div>
       <div className="mx-auto grid max-w-[92rem] gap-12 px-5 py-16 md:px-8 md:py-20 lg:grid-cols-12">
         <Reveal className="lg:col-span-5" delay={0.05}>
           <Logo />
-          <p className="mt-5 max-w-sm text-sm leading-relaxed text-foreground/70">
+          <p className="mt-5 max-w-sm text-sm leading-relaxed text-[#d3d3d3]">
             {site.legalName}. A {site.parent} company. {site.tagline}.
           </p>
-          <p className="mt-4 text-sm text-foreground/70">
-            <a className="underline-offset-4 hover:underline" href={site.parentUrl} target="_blank" rel="noreferrer">
+          <p className="mt-4 text-sm text-[#d3d3d3]">
+            <a className="text-[#a492ed] underline-offset-4 transition-colors hover:text-white hover:underline" href={site.parentUrl} target="_blank" rel="noreferrer">
               {site.parent}
             </a>
-            <span className="mt-1 block text-foreground/55">{site.parentBlurb}</span>
+            <span className="mt-1 block text-[#d3d3d3]/65">{site.parentBlurb}</span>
           </p>
         </Reveal>
         <StaggerGroup className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:col-span-7" stagger={0.1}>
@@ -35,13 +37,13 @@ export function SiteFooter() {
             <ul className="space-y-2 text-sm">
               {nav.map((item) => (
                 <li key={item.href}>
-                  <Link className="text-foreground/75 transition-colors hover:text-foreground" href={item.href}>
+                  <Link className="text-[#d3d3d3] transition-colors hover:text-[#a492ed]" href={item.href}>
                     {item.label}
                   </Link>
                 </li>
               ))}
               <li>
-                <Link className="text-foreground/75 transition-colors hover:text-foreground" href="/">
+                <Link className="text-[#d3d3d3] transition-colors hover:text-[#a492ed]" href="/">
                   Home
                 </Link>
               </li>
@@ -52,7 +54,7 @@ export function SiteFooter() {
             <ul className="space-y-2 text-sm">
               {offerings.technical.map((item) => (
                 <li key={item.title}>
-                  <Link className="text-foreground/75 transition-colors hover:text-foreground" href="/services">
+                  <Link className="text-[#d3d3d3] transition-colors hover:text-[#a492ed]" href="/services">
                     {item.title}
                   </Link>
                 </li>
@@ -61,19 +63,19 @@ export function SiteFooter() {
           </StaggerItem>
           <StaggerItem className="col-span-2 sm:col-span-1">
             <h2 className="eyebrow mb-4">Contact</h2>
-            <ul className="space-y-2 text-sm text-foreground/75">
+            <ul className="space-y-2 text-sm text-[#d3d3d3]">
               <li>
-                <a className="transition-colors hover:text-foreground" href={`mailto:${site.email}`}>
+                <a className="transition-colors hover:text-[#a492ed]" href={`mailto:${site.email}`}>
                   {site.email}
                 </a>
               </li>
               <li>
-                <a className="transition-colors hover:text-foreground" href={`tel:${site.phoneTel}`}>
+                <a className="transition-colors hover:text-[#a492ed]" href={`tel:${site.phoneTel}`}>
                   {site.phoneDisplay}
                 </a>
               </li>
               <li>
-                <a className="transition-colors hover:text-foreground" href={site.calendly} target="_blank" rel="noreferrer">
+                <a className="transition-colors hover:text-[#a492ed]" href={site.calendly} target="_blank" rel="noreferrer">
                   Book a call
                 </a>
               </li>
@@ -82,17 +84,17 @@ export function SiteFooter() {
             </ul>
             <ul className="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-sm">
               <li>
-                <a className="text-foreground/75 transition-colors hover:text-foreground" href={site.instagram} target="_blank" rel="noreferrer">
+                <a className="text-[#a492ed] transition-colors hover:text-white" href={site.instagram} target="_blank" rel="noreferrer">
                   Instagram
                 </a>
               </li>
               <li>
-                <a className="text-foreground/75 transition-colors hover:text-foreground" href={site.linkedin} target="_blank" rel="noreferrer">
+                <a className="text-[#a492ed] transition-colors hover:text-white" href={site.linkedin} target="_blank" rel="noreferrer">
                   LinkedIn
                 </a>
               </li>
               <li>
-                <a className="text-foreground/75 transition-colors hover:text-foreground" href={site.youtube} target="_blank" rel="noreferrer">
+                <a className="text-[#a492ed] transition-colors hover:text-white" href={site.youtube} target="_blank" rel="noreferrer">
                   YouTube
                 </a>
               </li>
@@ -102,15 +104,15 @@ export function SiteFooter() {
       </div>
       <div className="border-t border-white/10">
         <Reveal className="mx-auto flex max-w-3xl flex-col items-center px-5 py-14 text-center md:px-8" y={20}>
-          <Laurel className="mb-5 h-7 w-16 text-white/45" />
-          <p className="font-display text-2xl italic leading-snug tracking-tight md:text-3xl">“{quotes.liveWell.text}”</p>
-          <p className="mt-4 font-mono text-[0.65rem] tracking-[0.16em] text-foreground/70 uppercase">{quotes.liveWell.cite}</p>
+          <Laurel className="mb-5 h-7 w-16 text-[#a492ed]/75" />
+          <p className="font-display text-2xl italic leading-snug tracking-tight text-white md:text-3xl">“{quotes.liveWell.text}”</p>
+          <p className="mt-4 font-mono text-[0.65rem] tracking-[0.16em] text-[#a492ed] uppercase">{quotes.liveWell.cite}</p>
         </Reveal>
       </div>
       <div className="border-t border-white/10">
-        <div className="mx-auto flex max-w-[92rem] flex-col gap-2 px-5 py-6 text-xs text-foreground/50 md:flex-row md:items-center md:justify-between md:px-8">
+        <div className="mx-auto flex max-w-[92rem] flex-col gap-2 px-5 py-6 text-xs text-[#d3d3d3]/65 md:flex-row md:items-center md:justify-between md:px-8">
           <p>© {new Date().getFullYear()} Career Craftly. All rights reserved.</p>
-          <p>Built for career success · Powered by AI</p>
+          <p className="text-[#a492ed]/80">Built for career success · Powered by AI</p>
         </div>
       </div>
     </footer>

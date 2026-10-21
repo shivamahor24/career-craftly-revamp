@@ -57,7 +57,7 @@ export function Experience() {
           <div className={`intro-bar ${intro === "on" ? "is-on" : ""}`} />
           <button
             type="button"
-            className="pointer-events-auto absolute top-20 right-5 rounded-full border border-white/20 bg-black/50 px-3 py-1.5 font-mono text-[0.65rem] tracking-[0.18em] text-white/80 uppercase backdrop-blur-md md:right-8"
+            className="pointer-events-auto absolute top-20 right-5 rounded-full border border-[#a492ed]/30 bg-[#020010]/80 px-3 py-1.5 font-mono text-[0.65rem] tracking-[0.18em] text-[#d3d3d3] uppercase backdrop-blur-md transition-colors hover:border-[#6d3fea] hover:text-white md:right-8"
             onClick={() => {
               sessionStorage.setItem("cc-intro", "1")
               setIntro("leave")

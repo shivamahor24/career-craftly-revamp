@@ -8,7 +8,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { serviceOptions, site } from "@/lib/site"
 
 const fieldClass =
-  "h-12 rounded-xl border-white/15 bg-white/5 px-3 text-base text-foreground placeholder:text-foreground/40 md:text-base"
+  "h-12 rounded-xl border-[#a492ed]/25 bg-[#a492ed]/[0.06] px-3 text-base text-white placeholder:text-[#d3d3d3]/45 focus-visible:border-[#6d3fea] focus-visible:ring-[#6d3fea]/40 md:text-base"
 
 type Status = "idle" | "submitting" | "success" | "error"
 
@@ -106,20 +106,24 @@ export function ContactForm() {
           required
           rows={5}
           placeholder="Give us some context — the more detail, the better we can help."
-          className="min-h-36 rounded-xl border-white/15 bg-white/5 px-3 py-3 text-base placeholder:text-foreground/40"
+          className="min-h-36 rounded-xl border-[#a492ed]/25 bg-[#a492ed]/[0.06] px-3 py-3 text-base text-white placeholder:text-[#d3d3d3]/45 focus-visible:border-[#6d3fea] focus-visible:ring-[#6d3fea]/40"
         />
       </div>
-      <Button type="submit" disabled={status === "submitting"} className="h-12 w-full rounded-full text-base sm:w-auto sm:px-8">
+      <Button
+        type="submit"
+        disabled={status === "submitting"}
+        className="h-12 w-full rounded-full border border-[#a492ed]/35 bg-[#6d3fea] text-base text-white shadow-[0_0_28px_rgba(109,63,234,0.45)] hover:bg-[#7b4df2] sm:w-auto sm:px-8"
+      >
         {status === "submitting" ? "Sending…" : "Send message"}
       </Button>
       <div aria-live="polite" className="min-h-6 text-sm">
         {status === "success" ? (
-          <p className="text-primary">Message sent. We reply within 24 hours.</p>
+          <p className="text-[#02ab7a]">Message sent. We reply within 24 hours.</p>
         ) : null}
         {status === "error" ? (
-          <p className="text-foreground">
+          <p className="text-[#ff2244]">
             {error}{" "}
-            <a className="underline" href={`mailto:${site.email}`}>
+            <a className="text-[#a492ed] underline hover:text-white" href={`mailto:${site.email}`}>
               {site.email}
             </a>
           </p>

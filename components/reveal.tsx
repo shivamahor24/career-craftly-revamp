@@ -163,10 +163,12 @@ export function SpotlightCard({
   children,
   className,
   as = "div",
+  spotlightColor = "rgba(109, 63, 234, 0.20)",
 }: {
   children: ReactNode
   className?: string
   as?: "div" | "article" | "li"
+  spotlightColor?: string
 }) {
   const ref = useRef<HTMLElement | null>(null)
   const [pos, setPos] = useState({ x: 0, y: 0 })
@@ -200,7 +202,7 @@ export function SpotlightCard({
           className="pointer-events-none absolute -inset-px rounded-[inherit] transition-opacity duration-500"
           style={{
             opacity: hovered ? 1 : 0,
-            background: `radial-gradient(420px circle at ${pos.x}px ${pos.y}px, rgba(255,255,255,0.09), transparent 45%)`,
+            background: `radial-gradient(420px circle at ${pos.x}px ${pos.y}px, ${spotlightColor}, rgba(164, 146, 237, 0.12) 28%, transparent 55%)`,
           }}
         />
       ) : null}
@@ -219,11 +221,15 @@ export function AnimatedLine({
   vertical?: boolean
 }) {
   const reduce = useReducedMotion()
+  const gradientClass = vertical
+    ? "w-px bg-gradient-to-b from-[#6d3fea]/60 via-[#a492ed]/40 to-transparent"
+    : "h-px w-full bg-gradient-to-r from-[#6d3fea]/60 via-[#a492ed]/40 to-transparent"
+
   if (reduce) {
     return (
       <div
         aria-hidden
-        className={`${vertical ? "w-px" : "h-px w-full"} bg-white/15 ${className ?? ""}`}
+        className={`${gradientClass} ${className ?? ""}`}
       />
     )
   }
@@ -236,7 +242,7 @@ export function AnimatedLine({
       viewport={{ once: true, margin: "-40px" }}
       transition={{ duration: 0.95, delay, ease: [0.22, 1, 0.36, 1] }}
       style={{ transformOrigin: vertical ? "top center" : "left center" }}
-      className={`${vertical ? "w-px" : "h-px w-full"} bg-white/15 ${className ?? ""}`}
+      className={`${gradientClass} ${className ?? ""}`}
     />
   )
 }

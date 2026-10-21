@@ -51,7 +51,7 @@ export function CaseRail({ studies }: { studies: RailStudy[] }) {
     <Link
       key={study.slug}
       href={`/work/${study.slug}`}
-      className="zoom-frame group flex w-[84vw] shrink-0 snap-center flex-col overflow-hidden rounded-[1.6rem] border border-white/10 bg-white/[0.03] transition-all duration-500 hover:border-white/25 hover:bg-white/[0.05] lg:w-[44vw]"
+      className="zoom-frame group flex w-[84vw] shrink-0 snap-center flex-col overflow-hidden rounded-[1.6rem] border border-[#a492ed]/20 bg-[#a492ed]/[0.05] transition-all duration-500 hover:border-[#a492ed]/45 hover:bg-[#a492ed]/[0.09] hover:shadow-[0_0_40px_rgba(109,63,234,0.22)] lg:w-[44vw]"
     >
       <div className="overflow-hidden">
         {/* Native img: next/image inside this client scroller breaks static prerender. */}
@@ -68,24 +68,26 @@ export function CaseRail({ studies }: { studies: RailStudy[] }) {
         <div>
           <p className="eyebrow">
             {study.number}
-            <span className="mx-2 text-white/30">/</span>
+            <span className="mx-2 text-[#6d3fea]">/</span>
             Case study
           </p>
-          <h3 className="font-display mt-3 text-4xl tracking-tight transition-transform duration-500 group-hover:translate-x-1 md:text-5xl">
+          <h3 className="font-display mt-3 text-4xl tracking-tight text-white transition-transform duration-500 group-hover:translate-x-1 md:text-5xl">
             {study.name}
           </h3>
-          <p className="mt-3 max-w-sm text-sm leading-relaxed text-foreground/60">{study.category}</p>
+          <p className="mt-3 max-w-sm text-sm leading-relaxed text-[#d3d3d3]">{study.category}</p>
           {study.obstacle ? (
-            <p className="mt-4 max-w-sm text-sm leading-relaxed text-foreground/75">
-              <span className="eyebrow mr-2">Obstacle</span>
+            <p className="mt-4 max-w-sm text-sm leading-relaxed text-[#d3d3d3]">
+              <span className="eyebrow mr-2 rounded-full border border-[#a492ed]/25 bg-[#a492ed]/12 px-2 py-0.5">
+                Obstacle
+              </span>
               {study.obstacle}
             </p>
           ) : null}
         </div>
         {study.metric ? (
           <p className="text-right transition-transform duration-500 group-hover:-translate-y-1">
-            <span className="font-display block text-4xl tracking-tight md:text-5xl">{study.metric}</span>
-            <span className="mt-1 block max-w-[8rem] text-xs text-foreground/50">{study.metricLabel}</span>
+            <span className="font-display block text-4xl tracking-tight text-[#a492ed] md:text-5xl">{study.metric}</span>
+            <span className="mt-1 block max-w-[8rem] text-xs text-[#d3d3d3]/70">{study.metricLabel}</span>
           </p>
         ) : null}
       </div>

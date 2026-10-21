@@ -60,7 +60,7 @@ export function ParticleField() {
       if (!running || width === 0) return
       const drift = window.scrollY * 0.04
       ctx.clearRect(0, 0, width, height)
-      ctx.strokeStyle = "rgba(255,255,255,0.07)"
+      ctx.strokeStyle = "rgba(164, 146, 237, 0.14)"
       ctx.beginPath()
       ctx.ellipse(width * 0.72, height * 0.4, Math.min(width, 920) * 0.24, height * 0.2, 0, 0, Math.PI * 2)
       ctx.stroke()
@@ -96,14 +96,14 @@ export function ParticleField() {
           const by = b.y * height + drift
           const distance = Math.hypot(ax - bx, ay - by)
           if (distance < 150) {
-            ctx.strokeStyle = `rgba(255,255,255,${(1 - distance / 150) * 0.2})`
+            ctx.strokeStyle = `rgba(109, 63, 234, ${(1 - distance / 150) * 0.28})`
             ctx.beginPath()
             ctx.moveTo(ax, ay)
             ctx.lineTo(bx, by)
             ctx.stroke()
           }
         }
-        ctx.fillStyle = "rgba(255,255,255,0.82)"
+        ctx.fillStyle = "rgba(164, 146, 237, 0.9)"
         ctx.beginPath()
         ctx.arc(ax, ay, 1.35, 0, Math.PI * 2)
         ctx.fill()
